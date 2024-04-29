@@ -159,7 +159,7 @@ public class NewCustomerActivity  extends AppCompatActivity {
         paramString.append( editText_email_address.getText().toString());
 
         paramString.append("&address_street=");
-        paramString.append( editText_street_address.getText().toString());
+        paramString.append( editText_street_address.toString());
 
         paramString.append("&address_postcode=");
         paramString.append( editText_postcode.getText().toString());
