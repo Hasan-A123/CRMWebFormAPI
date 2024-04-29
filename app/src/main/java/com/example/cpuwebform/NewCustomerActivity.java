@@ -124,11 +124,11 @@ public class NewCustomerActivity  extends AppCompatActivity {
         /** Spinner
          *
          */
-        paramString.append("customer_type=");
-        paramString.append(spinner_type.getItemAtPosition(spinner_type.getSelectedItemPosition()).toString());
-
         paramString.append("&customer_sub_type=");
         paramString.append(spinner_customer_sub_type.getItemAtPosition(spinner_customer_sub_type.getSelectedItemPosition()).toString());
+
+        paramString.append("&customer_type=");
+        paramString.append(spinner_type.getItemAtPosition(spinner_type.getSelectedItemPosition()).toString());
 
         paramString.append("&status=");
         paramString.append(spinner_status.getItemAtPosition(spinner_status.getSelectedItemPosition()).toString());
@@ -159,7 +159,7 @@ public class NewCustomerActivity  extends AppCompatActivity {
         paramString.append( editText_email_address.getText().toString());
 
         paramString.append("&address_street=");
-        paramString.append( editText_street_address.toString());
+        paramString.append( editText_street_address.getText().toString());
 
         paramString.append("&address_postcode=");
         paramString.append( editText_postcode.getText().toString());
