@@ -1,5 +1,9 @@
 package com.example.cpuwebform;
 
+/** Customer Class
+ *
+ */
+
 public class Customer {
     String id;
     String customer_id;
