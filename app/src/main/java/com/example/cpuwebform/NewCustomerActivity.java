@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class NewCustomerActivity  extends AppCompatActivity {
 
-    String url_insert_customer = "http://student02.csucleeds.com/student02/cpu/api.php?apicall=view";
+    String url_insert_customer = "http://student02.csucleeds.com/student02/cpu/api.php?apicall=insert";
     Spinner  spinner_type, spinner_customer_sub_type, spinner_status;
     TextView  textView_type, textView_customer_sub_type, textView_status;
     EditText editText_customer_accounting_id,editText_no_of_locations, editText_company_name, editText_contact_name, editText_title,
@@ -118,13 +118,61 @@ public class NewCustomerActivity  extends AppCompatActivity {
 
     private String generateParameters() {
         StringBuilder paramString = new StringBuilder();
+        paramString.append("&customer_id=");
+        paramString.append( editText_customer_accounting_id.getText().toString());
+
+        /** Spinner
+         *
+         */
         paramString.append("customer_type=");
         paramString.append(spinner_type.getItemAtPosition(spinner_type.getSelectedItemPosition()).toString());
+
         paramString.append("&customer_sub_type=");
         paramString.append(spinner_customer_sub_type.getItemAtPosition(spinner_customer_sub_type.getSelectedItemPosition()).toString());
+
         paramString.append("&status=");
         paramString.append(spinner_status.getItemAtPosition(spinner_status.getSelectedItemPosition()).toString());
-        paramString.append("&customer_type=");
+
+
+        paramString.append("&num_locations=");
+        paramString.append( editText_no_of_locations.getText().toString());
+
+        paramString.append("&company_name=");
+        paramString.append( editText_company_name.getText().toString());
+
+        paramString.append("&contact_name=");
+        paramString.append( editText_contact_name.getText().toString());
+
+        paramString.append("&title=");
+        paramString.append( editText_title.getText().toString());
+
+        paramString.append("&role=");
+        paramString.append( editText_role.getText().toString());
+
+        paramString.append("&phone_number=");
+        paramString.append( editText_phone_number.getText().toString());
+
+        paramString.append("&mobile_number=");
+        paramString.append( editText_mobile_number.getText().toString());
+
+        paramString.append("&email_address=");
+        paramString.append( editText_email_address.getText().toString());
+
+        paramString.append("&address_street=");
+        paramString.append( editText_street_address.toString());
+
+        paramString.append("&address_postcode=");
+        paramString.append( editText_postcode.getText().toString());
+
+        paramString.append("&address_county=");
+        paramString.append( editText_county.getText().toString());
+
+        paramString.append("&address_city=");
+        paramString.append( editText_City.getText().toString());
+
+        paramString.append("&annual_revenue=");
+        paramString.append( editText_annual_revenue.getText().toString());
+
         return paramString.toString();
     }
 
