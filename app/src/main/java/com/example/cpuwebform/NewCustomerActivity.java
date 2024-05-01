@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,13 +19,19 @@ import java.util.ArrayList;
 import java.util.List;
 public class NewCustomerActivity  extends AppCompatActivity {
 
+    // URL for API endpoint to insert customer data
     String url_insert_customer = "http://student02.csucleeds.com/student02/cpu/api.php?apicall=insert";
+    // Spinner fields
     Spinner  spinner_type, spinner_customer_sub_type, spinner_status;
+    // TextView fields
     TextView  textView_type, textView_customer_sub_type, textView_status;
+    // EditText fields
     EditText editText_customer_accounting_id,editText_no_of_locations, editText_company_name, editText_contact_name, editText_title,
             editText_role, editText_phone_number, editText_mobile_number, editText_email_address,
             editText_street_address, editText_postcode, editText_county, editText_City, editText_annual_revenue;
 
+
+    // Button for submitting data
     Button button_submit;
 
 
@@ -32,7 +40,7 @@ public class NewCustomerActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_customer);
 
-
+        // Initialize views
         spinner_type = findViewById(R.id.spinner_type);
         spinner_customer_sub_type = findViewById(R.id.spinner_customer_sub_type);
         spinner_status = findViewById(R.id.spinner_status);
@@ -54,7 +62,7 @@ public class NewCustomerActivity  extends AppCompatActivity {
         editText_City= findViewById(R.id.editText_City);
         editText_annual_revenue= findViewById(R.id.editText_annual_revenue);
 
-
+        // Populate spinners with data
         populateSpinners();
 
         //button
@@ -62,6 +70,11 @@ public class NewCustomerActivity  extends AppCompatActivity {
         button_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Display alert dialog
+                displayAlertDialog("Data submitted successfully!");
+
+                // Handle submit button click
                 URLConnectionPostHandler uRLConnectionPostHandler = new URLConnectionPostHandler();
                 uRLConnectionPostHandler.setDataDownloadListener(new URLConnectionPostHandler.DataDownloadListener() {
                     @Override
@@ -71,19 +84,26 @@ public class NewCustomerActivity  extends AppCompatActivity {
                         Toast.makeText(NewCustomerActivity.this, data.toString(), Toast.LENGTH_SHORT).show();
                     }
 
+
                     @Override
                     public void dataDownloadFailed() {
+                        // Show failure message
                         Toast.makeText(NewCustomerActivity.this, "Record not added.", Toast.LENGTH_SHORT).show();
                     }
                 });
+                // Execute API call to insert customer data
                 uRLConnectionPostHandler.execute(url_insert_customer, generateParameters());
 
+                // Set result and finish activity
                 Intent resultIntent = new Intent();
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
             }
         });
     }
+    /**
+     * Populate spinners with predefined data.
+     */
     private void populateSpinners() {
         List<String> type = new ArrayList<String>();
         type.add("prospect");
@@ -115,6 +135,25 @@ public class NewCustomerActivity  extends AppCompatActivity {
         dataAdapterTypes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_status.setAdapter(dataAdapterTypes);
     }
+
+    private void displayAlertDialog(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Alert")
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked OK button
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    /**
+     * Generate parameters for the API call.
+     *
+     * @return A string containing the parameters.
+     */
 
     private String generateParameters() {
         StringBuilder paramString = new StringBuilder();

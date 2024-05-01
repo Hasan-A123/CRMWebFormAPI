@@ -1,284 +1,189 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <EditText
-        android:id="@+id/editText_customer_accounting_id"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:hint="customer_accounting_id"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textView_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="92dp"
-        android:text="type"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Customer Accounting ID -->
+        <EditText
+            android:id="@+id/editText_customer_accounting_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Customer Accounting ID"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <Spinner
-        android:id="@+id/spinner_type"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:minHeight="48dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView_type"
-        app:layout_constraintTop_toBottomOf="@+id/textView_type" />
+        <!-- Type -->
+        <TextView
+            android:id="@+id/textView_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView_customer_sub_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="208dp"
-        android:text="customer_sub_type"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Spinner
+            android:id="@+id/spinner_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Spinner
-        android:id="@+id/spinner_customer_sub_type"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:minHeight="48dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView_customer_sub_type"
-        app:layout_constraintTop_toBottomOf="@+id/textView_customer_sub_type" />
+        <!-- Customer Sub Type -->
+        <TextView
+            android:id="@+id/textView_customer_sub_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer Sub Type"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
 
+        <Spinner
+            android:id="@+id/spinner_customer_sub_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/textView_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="332dp"
-        android:text="status"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Status -->
+        <TextView
+            android:id="@+id/textView_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/spinner_status"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="16dp"
-        android:minHeight="48dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView_status"
-        app:layout_constraintTop_toBottomOf="@+id/textView_status" />
+        <Spinner
+            android:id="@+id/spinner_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/editText_no_of_locations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="496dp"
-        android:hint="no_of_locations"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Number of Locations -->
+        <EditText
+            android:id="@+id/editText_no_of_locations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Number Of Locations"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_company_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="568dp"
-        android:hint="company_name"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Company Name -->
+        <EditText
+            android:id="@+id/editText_company_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Company Name"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_contact_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="640dp"
-        android:hint="contact_name"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Contact Name -->
+        <EditText
+            android:id="@+id/editText_contact_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact Name"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="728dp"
-        android:hint="title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Title -->
+        <EditText
+            android:id="@+id/editText_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+        <!-- Role -->
+        <EditText
+            android:id="@+id/editText_role"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Role"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_role"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="832dp"
-        android:hint="role"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Phone Number -->
+        <EditText
+            android:id="@+id/editText_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_phone_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="940dp"
-        android:hint="phone_number"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Mobile Number -->
+        <EditText
+            android:id="@+id/editText_mobile_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mobile Number"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_mobile_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="1052dp"
-        android:hint="mobile_number"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Email Address -->
+        <EditText
+            android:id="@+id/editText_email_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Address"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_email_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="1164dp"
-        android:hint="email_address"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Street Address -->
+        <EditText
+            android:id="@+id/editText_street_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Street Address"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_street_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="1288dp"
-        android:hint="street_address"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Postcode -->
+        <EditText
+            android:id="@+id/editText_postcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Postcode"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_postcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="1420dp"
-        android:hint="postcode"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- County -->
+        <EditText
+            android:id="@+id/editText_county"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="County"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_county"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="1524dp"
-        android:hint="county"
-        android:minHeight="48dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- City -->
+        <EditText
+            android:id="@+id/editText_City"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="City"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+        <!-- Annual Revenue -->
+        <EditText
+            android:id="@+id/editText_annual_revenue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Annual Revenue"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/editText_annual_revenue"
-        android:layout_width="169dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="1708dp"
-        android:hint="annual_revenue"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
 
-    <Button
-        android:id="@+id/button_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1620dp"
-        android:layout_marginEnd="16dp"
-        android:text="Submit"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_type" />
-
-    <EditText
-        android:id="@+id/editText_City"
-        android:layout_width="177dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="city"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_county"
-        tools:ignore="MissingConstraints" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>
